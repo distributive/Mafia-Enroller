@@ -43,7 +43,7 @@ $(document).ready (() => {
     });
 
     socket.on ("setRole", (role) => {
-        showRole (role.title, role.description, role.condition, factionToClass (role.faction));
+        showRole (role.title, role.description, role.condition, role.faction);
     });
 
 
@@ -90,9 +90,8 @@ $(document).ready (() => {
         let enabledFactions = getEnabledFactions ();
 
         let input = $("#search-text").val ().toLowerCase ();
-        let queries = []
-            .concat (input.split (",").map (s => s.trim ()).filter (s => s))
-            .concat (input.split ("  ").map (s => s.trim ()).filter (s => s));
+        let queries = [].concat (input.split ("," ).map (s => s.trim ()).filter (s => s))
+                        .concat (input.split ("  ").map (s => s.trim ()).filter (s => s));
         if (queries.length == 0)
             queries = [""];
 
