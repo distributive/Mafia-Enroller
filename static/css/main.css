@@ -1,0 +1,534 @@
+/* CUSTOM VARIABLES */
+* {
+    --mafia-grey: #444945;
+    --mafia-grey-dark: #1a1c1b;
+
+    --mafia-red: #e02450;
+    --mafia-red-dark: #950023;
+
+    --mafia-white: white;
+    --mafia-white-dim: #e3e3e3;
+
+    --list-bg-even: #303030;
+    --list-bg-odd: #404040;
+
+    --faction-town: #86bbd8;
+    --faction-mafia: #a30015;
+    --faction-werewolf: #726e60;
+    --faction-alien: #a9ffcb;
+    --faction-neutral: #f6ae2d;
+    --faction-cult: #5438dc;
+
+    --good: green;
+    --bad: red;
+}
+/* CUSTOM VARIABLES END */
+
+
+
+/* BASE */
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+}
+
+b {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
+
+img {
+    pointer-events: none;
+}
+/* BASE END */
+
+
+
+/* GENERAL */
+body {
+    font-family: 'Montserrat', sans-serif;
+
+    text-align: center;
+
+    color: var(--mafia-white-dim);
+    background-color: var(--mafia-grey-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--mafia-white);
+}
+
+h1 {
+    width: 100%;
+    font-size: 200px;
+}
+
+h2 {
+    font-size: 60px;
+}
+
+main:not(#home) {
+    display: none;
+}
+/* GENERAL END */
+
+
+
+/* FACTIONS */
+.town {
+    color: var(--faction-town);
+}
+
+.mafia {
+    color: var(--faction-mafia);
+}
+
+.werewolf {
+    color: var(--faction-werewolf);
+}
+
+.alien {
+    color: var(--faction-alien);
+}
+
+.neutral {
+    color: var(--faction-neutral);
+}
+
+.cult {
+    color: var(--faction-cult);
+}
+/* FACTIONS END */
+
+
+
+/* BUTTON */
+button {
+    padding: 0.25em 1em;
+
+    font-size: 20px;
+
+    color: var(--mafia-white-dim);
+
+    border-radius: 6px;
+    border: 2px solid var(--mafia-grey-dark);
+    background-color: var(--mafia-grey);
+}
+button:hover {
+    background-color: var(--mafia-grey-dark);
+}
+button:active {
+    border-color: var(--mafia-grey);
+}
+
+button.alt {
+    padding: 0.25em 1em;
+
+    color: var(--mafia-white-dim);
+
+    border-radius: 6px;
+    border: 2px solid var(--mafia-red-dark);
+    background-color: var(--mafia-red);
+}
+button.alt:hover {
+    border-color: var(--mafia-red);
+    background-color: var(--mafia-red-dark);
+}
+button.alt:active {
+    border-color: var(--mafia-red-dark);
+    background-color: var(--mafia-red-dark);
+}
+/* BUTTON END */
+
+
+
+/* FORMS */
+.form {
+    margin-top: 5em;
+    margin-right: auto;
+    margin-left: auto;
+
+    width: 400px;
+}
+
+.form input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.form input[type="submit"] {
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    width: 100%;
+
+    color: var(--mafia-white-dim);
+
+    border-radius: 15px;
+    border: 2px solid var(--mafia-red-dark);
+    background-color: var(--mafia-red);
+}
+.form input[type="submit"]:hover {
+    border-color: var(--mafia-red);
+    background-color: var(--mafia-red-dark);
+}
+.form input[type="submit"]:active {
+    border-color: var(--mafia-red-dark);
+    background-color: var(--mafia-red-dark);
+}
+
+.form input[type="text"] {
+    padding-left: 1em;
+    padding-right: 1em;
+
+    border-radius: 15px;
+    border: 2px solid var(--mafia-grey);
+}
+
+.form#form-join {
+    display: flex;
+}
+.form#form-join #join-name {
+    width: 9em;
+
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.form#form-join #join-code {
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+
+    width: 4em;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    border-radius: 0;
+    border-right: none;
+    border-left: none;
+}
+.form#form-join input[type="submit"] {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+/* FORMS END */
+
+
+
+/* FADER */
+#fader {
+    display: none;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.5;
+    background-color: black;
+}
+/* FADER END */
+
+
+
+/* ERROR */
+#error-container {
+    display: none;
+    position: fixed;
+
+    padding: 1em;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 15px;
+    border: 2px solid var(--mafia-red-dark);
+    background-color: var(--mafia-red)
+}
+
+#error-container *:not(:first-child) {
+    margin-top: 1em;
+}
+
+#error-header {
+    font-size: 32px;
+    font-weight: bold;
+}
+/* ERROR END */
+
+
+
+/* HOME */
+#join-error {
+    display: none;
+    margin-top: 20px;
+    color: var(--bad);
+}
+/* HOME END */
+
+
+
+/* CODE */
+.code {
+    margin-top: 25px;
+
+    font-size: 50px;
+}
+/* CODE END */
+
+
+
+/* JOIN */
+#role-wait {
+    margin-top: 2em;
+    margin-bottom: 5em;
+
+    font-size: 20px;
+}
+
+#role-name {
+    display: none;
+
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+    font-size: 32px;
+}
+
+#role-description {
+    display: none;
+
+    margin-bottom: 2em;
+}
+
+#role-condition {
+    display: none;
+
+    margin-bottom: 2em;
+}
+
+
+
+#join-leave {
+    margin-top: 50px;
+}
+/* JOIN END */
+
+
+
+/* CREATE */
+#create-help {
+    margin-top: 40px;
+}
+
+
+
+#create-main {
+    display: flex;
+
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+#create-main h2 {
+    margin-bottom: 12px;
+}
+
+
+
+#role-list-container {
+    width: 50%;
+
+    border-right: solid 1px var(--mafia-grey-dark);
+}
+
+
+
+#role-search {
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    height: 3em;
+
+    background-color: var(--list-bg-even);
+}
+
+#search-text {
+    margin-top: 0.75em;
+
+    height: 1.5em;
+
+    vertical-align: middle;
+}
+
+#role-search label {
+    position: relative;
+
+    margin-top: 1em;
+    padding-left: 1.5em;
+}
+
+#role-search input[type="text"] {
+    margin-top: 1em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+
+    font-family: inherit;
+
+    border: none;
+    border-radius: 90px;
+    background-color: var(--mafia-white-dim);
+}
+
+#role-search input[type="checkbox"] {
+    display: none;
+    position: absolute;
+
+    height: 0;
+    width: 0;
+
+    opacity: 0;
+    cursor: pointer;
+}
+
+#role-search .checkmark {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    padding: 0;
+
+    width: calc(1em - 4px);
+    height: calc(1em - 4px);
+
+    border: solid 2px var(--mafia-grey-dark);
+    background-color: var(--mafia-grey);;
+}
+
+#role-search label:hover input ~ .checkmark {
+    background-color: var(--mafia-white-dim);
+}
+#role-search input:checked ~ .checkmark {
+    background-color: var(--mafia-white);
+}
+
+#role-search .checkmark:after {
+    position: absolute;
+    content: "";
+display: none;
+}
+#role-search input:checked ~ .checkmark:after {
+    display: block;
+}
+#role-search .checkmark:after {
+    top: 0;
+    left: 25%;
+
+    width: 0.25em;
+    height: 0.45em;
+
+    border: solid var(--mafia-grey-dark);
+    border-width: 0 2px 2px 0;
+    /* border-radius: 1.5px; */
+
+    transform: rotate(45deg);
+}
+
+
+
+.entry {
+    display: flex;
+
+    width: 100%;
+    height: 3em;
+
+    background-color: var(--list-bg-even);
+}
+.entry:nth-child(odd) {
+    background-color: var(--list-bg-odd);
+}
+
+.entry span {
+    margin-top: 1em;
+}
+
+.entry-name {
+    flex-grow: 1;
+}
+
+.entry button {
+    margin: 0.25em 1em;
+    padding: 0 0 2px 0;
+
+    width: 2.5em;
+    height: 2.5em;
+
+    font-size: inherit;
+
+    border-radius: 90px;
+}
+
+.entry-count {
+    width: 2em;
+}
+
+
+
+#player-list-container {
+    width: 50%;
+
+    border-left: solid 1px var(--mafia-grey-dark);
+}
+
+#player-list .entry span {
+    padding-right: 2em;
+
+    width: 100%;
+
+    text-align: right;
+}
+
+
+
+#create-game {
+    margin-bottom: 50px;
+}
+/* CREATE END */

@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title>Mafia Enroller</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/css/main.css" />
+
+    <!-- Favicons -->
+    <!--<link rel="icon" sizes="228x228" href="static/favicon-228.png">
+    <link rel="icon" sizes="128x128" href="static/favicon-128.png">
+    <link rel="icon" sizes="96x96" href="static/favicon-96.png">
+    <link rel="icon" sizes="32x32" href="static/favicon-32.png">
+    <link rel="shortcut icon" sizes="196x196" href="static/favicon-196.png">-->
+
+		<!-- Font imports -->
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- Socket.IO -->
+		<script src = "/socket.io/socket.io.js"></script>
+
+		<!-- Local scripts -->
+		<script type="text/javascript" src="static/js/main.js"></script>
+	</head>
+
+	<body>
+		<!-- Home page -->
+		<main id="home">
+		    <h1>Mafia Enroller</h1>
+
+		    <div id="form-create" class="form">
+				<input type="submit" id="create-submit" value="Create lobby"></input>
+			</form>
+
+			<div id="form-join" class="form">
+				<input type="text" id="join-name" placeholder="Nickname..." maxlength="16"></input>
+				<input type="text" id="join-code" placeholder="Code" maxlength="4"></input>
+				<input type="submit" id="join-submit" value="Join"></input>
+			</div>
+
+			<p id="join-error">That nickname is already taken.</p>
+		</main>
+
+
+
+		<!-- Join game page -->
+		<main id="join">
+			<h1>Please wait</h1>
+			<p class="code">Join code: <span></span></p>
+		    <p id="role-wait">You will receive your role when the moderator starts the game.</p>
+
+			<p id="role-name"></p>
+			<p id="role-description"></p>
+			<p id="role-condition"></p>
+
+			<button id="join-home" class="button-home alt">Leave</button>
+		</main>
+
+
+
+		<!-- Create lobby/game page -->
+		<main id="create">
+			<h1>New lobby</h1>
+			<p class="code">Join code: <span></span></p>
+		    <p id="create-help">Add your roles to the game, then click start game to randomly send them to the players.</p>
+
+			<div id="create-main">
+				<div id="role-list-container">
+					<h2>Roles</h2>
+					<div id="role-search">
+						<input type="text" id="search-text" placeholder="Search...">
+						<label id="search-town" name="town">Town
+							<input type="checkbox" checked>
+							<span class="checkmark"></span>
+						</label>
+						<label id="search-mafia" name="mafia">Mafia
+							<input type="checkbox" checked>
+							<span class="checkmark"></span>
+						</label>
+						<label id="search-werewolf" name="werewolf">Werewolf
+							<input type="checkbox" checked>
+							<span class="checkmark"></span>
+						</label>
+						<label id="search-alien" name="alien">Alien
+							<input type="checkbox" checked>
+							<span class="checkmark"></span>
+						</label>
+						<label id="search-neutral" name="neutral">Neutral
+							<input type="checkbox" checked>
+							<span class="checkmark"></span>
+						</label>
+						<label id="search-cult" name="cult">Cult
+							<input type="checkbox" checked>
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<ul id="role-list">
+					</ul>
+				</div>
+
+				<div id="player-list-container">
+					<h2>Players</h2>
+					<ul id="player-list">
+					</ul>
+				</div>
+			</div>
+
+			<button id="create-start" class="alt">Start game</button>
+			<button id="create-home" class="button-home alt">Leave</button>
+		</main>
+
+
+
+		<!-- Pop ups page -->
+		<div id="fader"></div>
+
+		<div id="error-container">
+			<h2 id="error-header"></h2>
+			<p id="error-body"></p>
+			<button id="error-close">Close</button>
+		</div>
+
+
+
+		<!-- JS disabled -->
+		<noscript>
+		</noscript>
+
+	</body>
+</html>
