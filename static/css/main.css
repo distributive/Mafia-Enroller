@@ -91,7 +91,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+    margin-top: 10px;
+
     width: 100%;
+
     font-size: 13vw;
 }
 
@@ -311,6 +314,8 @@ button.alt:active {
 .code {
     margin-top: 25px;
 
+    max-width: 100%;
+
     font-size: 50px;
 }
 /* CODE END */
@@ -369,7 +374,7 @@ button.alt:active {
 #create-main {
     display: flex;
 
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 #create-main h2 {
@@ -378,13 +383,13 @@ button.alt:active {
 
 
 #create-home {
-    margin-top: 12px;
+    margin-top: 40px;
 }
 
 
 
 #role-list-container {
-    max-width: 1000px;
+    max-width: 100%;
 
     flex-grow: 1;
 
@@ -532,7 +537,7 @@ display: none;
 #player-list-container {
     flex-grow: 1;
 
-    min-width: 500px;
+    max-width: 100%;
 
     border-left: solid 1px var(--mafia-grey-dark);
 }
@@ -561,13 +566,6 @@ display: none;
 @media only screen and (max-width: 1250px) {
     #create-main {
         display: block;
-    }
-    #role-list-container {
-        width: 100%;
-        max-width: 100%;
-    }
-    #player-list-container {
-        width: 100%;
     }
 }
 
