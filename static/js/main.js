@@ -186,6 +186,7 @@ function showCreate ()
 {
     $("#search-text").val ("");
     displayRoles ();
+    $("#player-count div").html ("Player count: 0");
 
     $("#create-start").show ();
     $("#player-list").empty ();
@@ -200,12 +201,14 @@ let playerHTML = `<li class="entry"><span>#name</span></li>`;
 function addPlayer (name)
 {
     $("#player-list").append (playerHTML.replace ("#name", name));
+    $("#player-count div").html (`Player count: ${$("#player-list li").length}`);
 }
 
 function removePlayer (name)
 {
     name = name.toLowerCase ();
     $("#player-list .entry span").filter (function (i) {return $(this).html ().trim ().toLowerCase () == name;}).parent ().remove ();
+    $("#player-count div").html (`Player count: ${$("#player-list li").length}`);
 }
 
 let roleHTML = `<li class="entry"><span class="entry-name">#name</span><button class="entry-dec">-</button><span class="entry-count">0</span><button class="entry-inc">+</button></li>`;

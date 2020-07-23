@@ -56,6 +56,8 @@
 			<p id="role-description"></p>
 			<p id="role-condition"></p>
 
+			<p id="role-message">Please do not refresh this page.</p>
+
 			<button id="join-home" class="button-home alt">Leave</button>
 		</main>
 
@@ -63,9 +65,12 @@
 
 		<!-- Create lobby/game page -->
 		<main id="create">
-			<h1>New lobby</h1>
+			<h1>New Lobby</h1>
 			<p class="code">Join code: <span></span></p>
-		    <p id="create-help">Add your roles to the game, then click start game to randomly send them to the players.</p>
+
+			<button id="create-home" class="button-home alt">Leave</button>
+
+		    <p id="create-help">Add your roles to the game, then click start game at the bottom of the page to randomly assign them to players.</p>
 
 			<div id="create-main">
 				<div id="role-list-container">
@@ -103,13 +108,13 @@
 
 				<div id="player-list-container">
 					<h2>Players</h2>
+					<div id="player-count"><div>3</div></div>
 					<ul id="player-list">
 					</ul>
 				</div>
 			</div>
 
 			<button id="create-start" class="alt">Start game</button>
-			<button id="create-home" class="button-home alt">Leave</button>
 		</main>
 
 
